@@ -14,14 +14,15 @@
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{
+ body {
     font-family: Arial, Helvetica, sans-serif;
-    color:#fff;
-    background: url('https://www.google.com/imgres?q=background%20image%20for%20my%20crackers%20shop&imgurl=https%3A%2F%2Fwww.shutterstock.com%2Fimage-vector%2Fset-gold-fireworks-firecrackers-golden-260nw-2499459027.jpg&imgrefurl=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fcrackers-backdrop&docid=RbRdja3An24rlM&tbnid=VTlwejf__fTuSM&vet=12ahUKEwjLzID8yoePAxXWcWwGHfkSKuYQM3oECH4QAA..i&w=520&h=280&hcb=2&ved=2ahUKEwjLzID8yoePAxXWcWwGHfkSKuYQM3oECH4QAA') no-repeat center center fixed;
+    color: #fff;
+    background: url("C:/Users/V2275424/Documents/Resume/bg.crackers.jpg") no-repeat center center fixed;
     background-size: cover;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-  }
+}
+
   .wrap{
     width: 95%;
     max-width: 980px;
@@ -50,6 +51,7 @@
     box-shadow: 0 6px 20px rgba(0,0,0,.18);
     overflow:hidden;
   }
+  
   table{
     width:100%;
     border-collapse: collapse;
@@ -73,6 +75,13 @@
   td.item-name{
     text-align:left;
     white-space: normal;
+  }
+  td.price s{
+    color: #888;
+    margin-right: 4px;
+  }
+  td.price b{
+    color: #c62828;
   }
   tbody tr:nth-child(even) td{ background: #fff8e6; }
   tbody tr:nth-child(odd) td{ background: #ffffff; }
@@ -188,9 +197,8 @@
       </table>
 
       <div class="actions">
-<button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
-
-        <button class="btn btn-save" onclick="openSave()">💾 Save</button>
+        <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
+        <button class="btn btn-save" onclick="openSave()">💾 Order</button>
       </div>
       <div class="legend">Tip: For background graphics when printing, in Chrome print dialog enable “Background graphics”.</div>
     </div>
@@ -208,11 +216,10 @@
         <label for="custAddress">Address</label>
         <textarea id="custAddress" rows="3" placeholder="Door No, Street, Area, City, Pincode"></textarea>
       </div>
-	  <div class="field">
-  <label for="custMobile">Mobile Number</label>
-  <input id="custMobile" type="tel" placeholder="Your mobile number" />
-</div>
-
+      <div class="field">
+        <label for="custMobile">Mobile Number</label>
+        <input id="custMobile" type="tel" placeholder="Your mobile number" />
+      </div>
       <div class="modal-actions">
         <button class="btn btn-ghost" onclick="closeSave()">Cancel</button>
         <button class="btn btn-save" onclick="saveAndSend()">Save & Send</button>
@@ -221,33 +228,40 @@
   </div>
 
 <script>
-  // ====== DATA ======
-  const ITEMS = [
-    ["FP big",80],["FB special",90],["peacock feather",120],["Mega peacock",200],
-    ["Star War",150],["FP Small",70],["Colour Koti",220],["GC Big (10pcs)",60],
-    ["GC Ashoka",100],["1 1/2 TS",40],["4' TS",80],["15cm electric",40],
-    ["15cm color",40],["15cm green",40],["12 shot",250],["60 shot",1200],
-    ["120 shot",2000],["Butterfly",150],["pambaram",150],["selfie stick",120],
-    ["Diswheel",100],["Fire feather",150],["7cm pencil",30],["Rocket bomb",100],
-    ["kuruvi",10],["7cm Electric",15],["7cm color",15],["7cm red",15],
-    ["10cm electric",22],["10cm color",20],["4 lakhmi",20],["2 sound",35],
-    ["6' laksh",55],["tin",110],["7 shot",100],["photo flash",60],["Han out",300],
-    ["electric stone",20],["kit kat",40],["Jee boomba",20],["cartoon",25],
+
+  const ITEMS = [["7cm Electric",15],["7cm color",15],["7cm red",15],
+    ["10cm electric",22],["10cm color",20],["15cm electric",40],
+    ["15cm color",40],["15cm green",40],
+    ["FP big",80],["FB special",90],["FP Small",70],["GC Big (10pcs)",60],
+    ["GC Ashoka",100], ["1 1/2 Twinkling star",40],["4' Twinkling star",80],["7cm pencil",30],["waterfall pencil",250],
+	["Bigili",20],["kuruvi",10],,["4 lakhmi",20],["2 sound",35],
+    ["6' laksh",55],["4' inch gold",30],["5' inch gold",35],["6' inch gold",40],
+	["12 shot",250],["60 shot",1200], ["120 shot",2000], ["28 giant",12],["100 giant",40],["1k wala",200],["2k wala",400],
+    ["5k wala",1000],["10k wala",2000],["Star War",150],["Colour Koti",220],
+	["Rocket bomb",100],["color rain",150],["red and green shower",80],
+	 ["electric stone",20],["kit kat",40],["Jee boomba",20],["cartoon",25],
+	["peacock feather",120],["Mega peacock",200],   
+    ["Butterfly",150],["pambaram",150],["selfie stick",120],
+    ["Diswheel",100],["Fire feather",150],
+    ["tin",110],["7 shot",100],["photo flash",60],["Han out",300],
+   
     ["smoke color",150],["siren",240],["peacock red &green",200],
-    ["peacock silver",200],["Golden globe",150],["waterfall pencil",250],
-    ["Helicopter",120],["color rain",150],["red and green shower",80],
-    ["28 giant",12],["100 giant",40],["1k wala",200],["2k wala",400],
-    ["5k wala",1000],["10k wala",2000],["Bigili",20]
+    ["peacock silver",200],["Golden globe",150],
+    ["Helicopter",120],
+    ["21 items giftbox",500],
+	["31 items giftbox",650],["2k wala",400],["2k wala",400]
   ];
 
-  
   const tbody = document.querySelector("#priceTable tbody");
   ITEMS.forEach((it, i) => {
     const tr = document.createElement("tr");
+    const discountedPrice = it[1];
+    const mrp = (discountedPrice / 0.5).toFixed(0); // 90% discount
+
     tr.innerHTML = `
       <td>${i+1}</td>
       <td class="item-name">${it[0]}</td>
-      <td class="price">${it[1]}</td>
+      <td class="price"><s>₹${mrp}</s> <b>₹${discountedPrice}</b></td>
       <td><input type="number" min="0" value="0" oninput="updateRow(this)" /></td>
       <td class="finalPrice">0</td>
     `;
@@ -255,7 +269,9 @@
   });
 
   function updateRow(input){
-    const price = parseFloat(input.closest("tr").querySelector(".price").textContent) || 0;
+    // Extract discounted price from the cell (ignore MRP)
+    const priceText = input.closest("tr").querySelector(".price b").textContent;
+    const price = parseFloat(priceText.replace(/[^0-9.]/g,'')) || 0;
     const qty = parseInt(input.value, 10) || 0;
     input.closest("tr").querySelector(".finalPrice").textContent = (price * qty).toString();
     updateGrandTotal();
@@ -278,31 +294,24 @@
     document.getElementById("saveModal").style.display = "none";
   }
   function printOnlyWithQty(){
-  const rows = document.querySelectorAll("#priceTable tbody tr");
-  const hiddenRows = [];
-  
-  // Hide rows with qty 0
-  rows.forEach(r => {
-    const qty = parseInt(r.querySelector("input").value || "0", 10);
-    if(qty === 0){
-      r.style.display = "none";
-      hiddenRows.push(r);
-    }
-  });
-
-  // Trigger print
-  window.print();
-
-  // Restore hidden rows after printing
-  hiddenRows.forEach(r => r.style.display = "");
-}
-
+    const rows = document.querySelectorAll("#priceTable tbody tr");
+    const hiddenRows = [];
+    rows.forEach(r => {
+      const qty = parseInt(r.querySelector("input").value || "0", 10);
+      if(qty === 0){
+        r.style.display = "none";
+        hiddenRows.push(r);
+      }
+    });
+    window.print();
+    hiddenRows.forEach(r => r.style.display = "");
+  }
 
   function buildOrderMessage(name, address){
     const rows = [...document.querySelectorAll("#priceTable tbody tr")];
     const picked = rows.map(r => {
       const name = r.querySelector(".item-name").textContent.trim();
-      const price = r.querySelector(".price").textContent.trim();
+      const price = r.querySelector(".price b").textContent.trim();
       const qty = r.querySelector("input").value.trim();
       const final = r.querySelector(".finalPrice").textContent.trim();
       return {name, price, qty, final};
@@ -317,7 +326,7 @@
     lines.push(`Address: ${address || "-"}`);
     lines.push("");
     lines.push("Items:");
-    picked.forEach(p => lines.push(`- ${p.name} | ₹${p.price} x ${p.qty} = ₹${p.final}`));
+    picked.forEach(p => lines.push(`- ${p.name} | ${p.price} x ${p.qty} = ₹${p.final}`));
     if(picked.length === 0) lines.push("- (No quantities entered)");
     lines.push("");
     lines.push(`Grand Total: ₹${grand}`);
@@ -327,21 +336,17 @@
     return lines.join("\n");
   }
 
-  // Opens BOTH email and WhatsApp (browser may block one; allow pop-ups)
   function saveAndSend(){
     const name = document.getElementById("custName").value.trim();
     const address = document.getElementById("custAddress").value.trim();
     const msg = buildOrderMessage(name, address);
     const encoded = encodeURIComponent(msg);
 
-    // Email
     const mailto = `mailto:vidhyasagarg2001@gmail.com?subject=${encodeURIComponent("Tamil Crackers Order")}&body=${encoded}`;
-    // WhatsApp (use full country code number; "123" provided by you)
     const wa = `https://wa.me/7502921335?text=${encoded}`;
 
-    // Try opening both; some browsers only allow one popup per click
-    window.open(wa, "_blank");       // WhatsApp in new tab
-    window.location.href = mailto;    // Email in current tab
+    window.open(wa, "_blank");
+    window.location.href = mailto;
 
     closeSave();
   }
