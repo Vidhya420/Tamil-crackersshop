@@ -134,6 +134,7 @@
     background: rgba(0,0,0,.55);
     display:none; align-items:center; justify-content:center;
     padding: 16px;
+    z-index: 10;
   }
   .modal{
     width:95%;
@@ -182,63 +183,73 @@
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>🎆 Tamil Crackers Shop 🎇</h1>
-      <p>40, Iyyanar Kovil Salai, Palaiyur, Nagapattinam</p>
-      <p>📞 7502921335, 9095621569</p>
-    </header>
 
-    <div class="card">
-      <table id="priceTable" aria-label="Price List">
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Item Name</th>
-            <th>Price (₹)</th>
-            <th>Qty</th>
-            <th>Final Price (₹)</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot>
-          <tr>
-            <td colspan="4" style="text-align:right">Grand Total</td>
-            <td id="grandTotal">0</td>
-          </tr>
-        </tfoot>
-      </table>
+<!-- Happy Diwali Popup -->
+<div id="diwaliPopup" class="modal-backdrop" style="display:flex; background:rgba(0,0,0,0.75); align-items:center; justify-content:center;">
+  <div class="modal" style="text-align:center; background: linear-gradient(45deg,#ff9800,#d32f2f); color:#fff;">
+    <h2 style="margin:0 0 10px;">🎇 Happy Diwali! 🎆</h2>
+    <p style="margin:0 0 16px;">Welcome to Tamil Crackers Shop</p>
+    <button class="btn btn-save" onclick="closeDiwaliPopup()">✨ Celebrate ✨</button>
+  </div>
+</div>
 
-      <div class="actions">
-        <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
-        <button class="btn btn-save" onclick="openSave()">💾 Order</button>
-      </div>
-      <div class="legend">Tip: For background graphics when printing, in Chrome print dialog enable “Background graphics”.</div>
+<div class="wrap">
+  <header>
+    <h1>🎆 Tamil Crackers Shop 🎇</h1>
+    <p>40, Iyyanar Kovil Salai, Palaiyur, Nagapattinam</p>
+    <p>📞 7502921335, 9095621569</p>
+  </header>
+
+  <div class="card">
+    <table id="priceTable" aria-label="Price List">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Item Name</th>
+          <th>Price (₹)</th>
+          <th>Qty</th>
+          <th>Final Price (₹)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" style="text-align:right">Grand Total</td>
+          <td id="grandTotal">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="actions">
+      <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
+      <button class="btn btn-save" onclick="openSave()">💾 Order</button>
+    </div>
+    <div class="legend">Tip: For background graphics when printing, in Chrome print dialog enable “Background graphics”.</div>
+  </div>
+</div>
+
+<!-- Save Modal -->
+<div id="saveModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="saveTitle">
+  <div class="modal">
+    <h3 id="saveTitle">Save & Send Details</h3>
+    <div class="field">
+      <label for="custName">Name</label>
+      <input id="custName" type="text" placeholder="Your name" />
+    </div>
+    <div class="field">
+      <label for="custAddress">Address</label>
+      <textarea id="custAddress" rows="3" placeholder="Door No, Street, Area, City, Pincode"></textarea>
+    </div>
+    <div class="field">
+      <label for="custMobile">Mobile Number</label>
+      <input id="custMobile" type="tel" placeholder="Your mobile number" />
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeSave()">Cancel</button>
+      <button class="btn btn-save" onclick="saveAndSend()">Save & Send</button>
     </div>
   </div>
-
-  <!-- Modal -->
-  <div id="saveModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="saveTitle">
-    <div class="modal">
-      <h3 id="saveTitle">Save & Send Details</h3>
-      <div class="field">
-        <label for="custName">Name</label>
-        <input id="custName" type="text" placeholder="Your name" />
-      </div>
-      <div class="field">
-        <label for="custAddress">Address</label>
-        <textarea id="custAddress" rows="3" placeholder="Door No, Street, Area, City, Pincode"></textarea>
-      </div>
-      <div class="field">
-        <label for="custMobile">Mobile Number</label>
-        <input id="custMobile" type="tel" placeholder="Your mobile number" />
-      </div>
-      <div class="modal-actions">
-        <button class="btn btn-ghost" onclick="closeSave()">Cancel</button>
-        <button class="btn btn-save" onclick="saveAndSend()">Save & Send</button>
-      </div>
-    </div>
-  </div>
+</div>
 
 <script>
   const ITEMS = [
@@ -267,7 +278,6 @@
     const tr = document.createElement("tr");
     const discountedPrice = it[1];
     const mrp = (discountedPrice / 0.5).toFixed(0); // 50% MRP
-
     tr.innerHTML = `
       <td>${i+1}</td>
       <td class="item-name">${it[0]}</td>
@@ -345,6 +355,14 @@
     window.location.href = mailto;
     closeSave();
   }
+
+  // Happy Diwali popup
+  function closeDiwaliPopup() {
+    document.getElementById('diwaliPopup').style.display = 'none';
+  }
+  window.addEventListener('load', () => {
+    setTimeout(closeDiwaliPopup, 5000);
+  });
 </script>
 </body>
 </html>
