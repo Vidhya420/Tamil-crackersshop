@@ -51,6 +51,17 @@
     text-shadow: 0 1px 3px #000;
   }
 
+  .banner{
+    background: linear-gradient(135deg, #d32f2f, #ff9800);
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    padding:16px;
+    border-radius:16px;
+    margin-bottom:20px;
+    box-shadow: 0 6px 18px var(--shadow-dark);
+  }
+
   .card{
     background: var(--paper);
     color: var(--ink);
@@ -188,16 +199,33 @@
   }
   .btn-ghost{ background:#f3f3f3; color:#111; }
 
+  /* Google Map */
+  .map-container{
+    margin-top:24px;
+    text-align:center;
+  }
+  .map-container h3{ margin-bottom:12px; color: var(--gold);}
+  .map-container a iframe{
+    width: 100%;
+    max-width:400px;
+    height:200px;
+    border-radius:12px;
+    pointer-events:none;
+    box-shadow:0 6px 18px var(--shadow-dark);
+  }
+
   /* Mobile */
   @media screen and (max-width:768px){
     header h1{ font-size:32px; }
     table{ font-size:13px; }
     input[type="number"]{ width:50px; font-size:13px; }
     .btn{ padding:10px 16px; font-size:14px; }
+    .map-container a iframe{ max-width:100%; height:180px; }
   }
 </style>
 </head>
 <body>
+
 <!-- Happy Diwali Popup -->
 <div id="diwaliPopup" class="modal-backdrop" style="display:flex;">
   <div class="modal" style="text-align:center; background: linear-gradient(135deg,#ff9800,#d32f2f); color:#fff;">
@@ -213,6 +241,9 @@
     <p>40, Iyyanar Kovil Salai, Palaiyur, Nagapattinam</p>
     <p>📞 7502921335, 9095621569</p>
   </header>
+
+  <!-- 90% Discount Banner -->
+  <div class="banner">🔥 50% OFF on Selected Crackers! 🔥</div>
 
   <div class="card">
     <table id="priceTable" aria-label="Price List">
@@ -240,6 +271,19 @@
     </div>
     <div class="legend">Tip: For printing background graphics, enable “Background graphics” in Chrome print dialog.</div>
   </div>
+
+  <!-- Google Map -->
+  <div class="map-container">
+    <h3>📍 Find Us Here</h3>
+    <a href="https://share.google/HTJCiZpjeBpRDuba0" target="_blank">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.987065867412!2d79.84638917584225!3d10.8261087922856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5366c07c6dbb15%3A0x9f32ecb0c46f87c!2sIyyanar%20Kovil%20Salai%2C%20Palaiyur%2C%20Nagapattinam!5e0!3m2!1sen!2sin!4v1691890000000!5m2!1sen!2sin" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </a>
+  </div>
 </div>
 
 <!-- Save Modal -->
@@ -266,7 +310,6 @@
 </div>
 
 <script>
-  // Items and table population (same as your previous code)
   const ITEMS = [
     ["7cm Electric",15],["7cm color",15],["7cm red",15],["10cm electric",22],
     ["10cm color",20],["15cm electric",40],["15cm color",40],["15cm green",40],
