@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <title>Tamil Crackers - Price List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- Razorpay checkout -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <style>
   :root{
@@ -22,7 +21,6 @@
     color: #fff;
     background: url('https://images.unsplash.com/photo-1608783846847-9b07c9720c2b?auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
   }
-
   .wrap{
     width: 95%;
     max-width: 1000px;
@@ -34,7 +32,6 @@
     overflow-x: auto;
     backdrop-filter: blur(6px);
   }
-
   header{
     text-align:center;
     margin-bottom:20px;
@@ -50,7 +47,6 @@
     font-size:15px;
     text-shadow: 0 1px 3px #000;
   }
-
   .banner{
     background: linear-gradient(135deg, #d32f2f, #ff9800);
     text-align:center;
@@ -61,7 +57,6 @@
     margin-bottom:20px;
     box-shadow: 0 6px 18px var(--shadow-dark);
   }
-
   .card{
     background: var(--paper);
     color: var(--ink);
@@ -71,7 +66,6 @@
     transition: transform 0.3s ease;
   }
   .card:hover { transform: translateY(-4px); }
-
   table{
     width:100%;
     border-collapse: collapse;
@@ -107,7 +101,6 @@
   tbody tr:hover{
     background: rgba(255,200,0,0.1);
   }
-
   input[type="number"]{
     width:70px;
     padding:6px;
@@ -122,13 +115,11 @@
     border-color: var(--brand2);
     box-shadow: 0 0 6px rgba(255,152,0,0.6);
   }
-
   tfoot td{
     font-weight:700;
     background: #ffd54f;
     font-size:16px;
   }
-
   .actions{
     display:flex;
     gap:12px;
@@ -136,7 +127,6 @@
     flex-wrap: wrap;
     margin-top:18px;
   }
-
   .btn{
     appearance:none;
     border:none;
@@ -149,17 +139,14 @@
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .btn:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px var(--shadow-dark); }
-
   .btn-print{ background: linear-gradient(135deg,#1976d2,#26a69a); color:#fff; }
   .btn-save{ background: linear-gradient(135deg,#ef6c00,#fdd835); color:#111; }
-
   .legend{
     text-align:center;
     font-size:13px;
     color:#fff;
     margin-top:10px;
   }
-
   /* Modal */
   .modal-backdrop{
     position: fixed; inset:0;
@@ -198,7 +185,6 @@
     display:flex; gap:12px; justify-content:flex-end; margin-top:12px;
   }
   .btn-ghost{ background:#f3f3f3; color:#111; }
-
   /* Google Map */
   .map-container{
     margin-top:24px;
@@ -213,7 +199,6 @@
     pointer-events:none;
     box-shadow:0 6px 18px var(--shadow-dark);
   }
-
   /* Mobile */
   @media screen and (max-width:768px){
     header h1{ font-size:32px; }
@@ -242,8 +227,7 @@
     <p>📞 7502921335, 9095621569</p>
   </header>
 
-  <!-- 90% Discount Banner -->
-  <div class="banner">🔥 50% OFF on Selected Crackers! 🔥</div>
+  <div class="banner">🔥 Upto 50% OFF on Selected Crackers! 🔥</div>
 
   <div class="card">
     <table id="priceTable" aria-label="Price List">
@@ -251,7 +235,7 @@
         <tr>
           <th>No</th>
           <th>Item Name</th>
-          <th>Price (₹)</th>
+          <th>Discount Price (₹)</th>
           <th>Qty</th>
           <th>Final Price (₹)</th>
         </tr>
@@ -272,10 +256,9 @@
     <div class="legend">Tip: For printing background graphics, enable “Background graphics” in Chrome print dialog.</div>
   </div>
 
-  <!-- Google Map -->
   <div class="map-container">
     <h3>📍 Find Us Here</h3>
-    <a href="https://share.google/HTJCiZpjeBpRDuba0" target="_blank">
+    <a href="https://maps.app.goo.gl/Vq5BPwdbCiVJ3c2v9" target="_blank">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.987065867412!2d79.84638917584225!3d10.8261087922856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5366c07c6dbb15%3A0x9f32ecb0c46f87c!2sIyyanar%20Kovil%20Salai%2C%20Palaiyur%2C%20Nagapattinam!5e0!3m2!1sen!2sin!4v1691890000000!5m2!1sen!2sin" 
         allowfullscreen="" 
@@ -286,7 +269,6 @@
   </div>
 </div>
 
-<!-- Save Modal -->
 <div id="saveModal" class="modal-backdrop" role="dialog">
   <div class="modal">
     <h3>Save & Send Details</h3>
@@ -353,7 +335,6 @@
     document.querySelectorAll(".finalPrice").forEach(td=>total+=parseFloat(td.textContent)||0);
     document.getElementById("grandTotal").textContent = total.toString();
   }
-
   function openSave(){ document.getElementById("saveModal").style.display="flex"; document.getElementById("custName").focus();}
   function closeSave(){ document.getElementById("saveModal").style.display="none"; }
   function printOnlyWithQty(){
@@ -386,7 +367,6 @@
     window.open(wa,"_blank");
     closeSave();
   }
-
   function closeDiwaliPopup(){ document.getElementById('diwaliPopup').style.display='none'; }
   window.addEventListener('load',()=>{ setTimeout(closeDiwaliPopup,5000); });
 </script>
