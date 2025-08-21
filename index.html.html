@@ -227,7 +227,7 @@
       <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
       <button class="btn btn-save" onclick="openSave()">💾 Order</button>
     </div>
-  
+    <div class="legend">Tip: For background graphics when printing, in Chrome print dialog enable “Background graphics”.</div>
   </div>
 </div>
 
@@ -254,27 +254,28 @@
 	
   </div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
 <script>
   const ITEMS = [
-    ["7cm Sparklers",15],,
-    ["10cm Sparklers",22],,["15cm Sparklers",40],
-    ["FP big",80],["FB special",90],["FP Small",70],["GC Big (10pcs)",60],
-    ["GC Ashoka",100],["1 1/2 Twinkling star",40],["4' Twinkling star",80],
-    ["7cm pencil",30],["waterfall pencil",250],["Bigili",20],["kuruvi",10],
-    ["4 lakhmi",20],["2 sound",35],["6' laksh",55],["4' inch gold",30],
-    ["5' inch gold",35],["6' inch gold",40],["12 shot",250],["60 shot",1200],
-    ["120 shot",2000],["28 giant",12],["100 giant",40],["1k wala",200],
-    ["2k wala",400],["5k wala",1000],["10k wala",2000],["Star War",150],
-    ["Colour Koti",220],["Rocket bomb",100],["color rain",150],
-    ["red and green shower",80],["electric stone",20],["kit kat",40],
-    ["Jee boomba",20],["cartoon",25],["peacock feather",120],["Mega peacock",200],
-    ["Butterfly",150],["pambaram",150],["selfie stick",120],
-    ["Diswheel",100],["Fire feather",150],["tin",110],["7 shot",100],
-    ["photo flash",60],["Han out",300],["smoke color",150],["siren",240],
-    ["peacock red &green",200],["peacock silver",200],["Golden globe",150],
-    ["Helicopter",120],["21 items giftbox",500],["31 items giftbox",650]
+    ["7cm Sparklers/கம்பி மத்தாப்பு",15],,
+    ["10cm Sparklers/கம்பி மத்தாப்பு",22],,["15cm Sparklers/கம்பி மத்தாப்பு",40],
+    ["FP big/பெரிய புஷ்வானம்",80],["FB special/சிறப்பு புஷ்வானம்",90],["FP Small/சிறிய புஷ்வானம்",70],["GC Big(10pcs)/சிறிய சங்கு சக்கரம் ",60],
+    ["GC Ashoka/பெரிய சங்கு சக்கரம்",100],["1 1/2 Twinkling star/சிறிய சாட்டை",40],["4' Twinkling star/பெரிய சாட்டை",80],
+    ["7cm Pencil/பென்சில்",30],["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],["Bigili/பிஜிலி",20],["Kuruvi/பிஜிலி",10],
+    ["4 Lakhmi/லட்சுமி வெடி",20],["2 Sound/2 ஒலி வெடி",35],["6' Laksh/லட்சுமி வெடி",55],["4' Inch gold/கோல்டு வெடி",30],
+    ["5' Inch gold/கோல்டு வெடி",35],["6' Inch gold/கோல்டு வெடி",40],["12 Shot/வானம்",250],["60 Shot/வானம்",1200],
+    ["120 Shot/வானம்",2000],["28 Giant/சரம்",12],["100 Giant/சரம்",40],["1k Wala/சரம்",200],
+    ["2k Wala/சரம்",400],["5k Wala/சரம்",1000],["10k Wala/சரம்",2000],["Star War/சரம்",150],
+    ["Colour Koti/வண்ண கோட்டி",220],["Rocket bomb/ராக்கெட் குண்டு",100],["Color rain/வண்ண மழை",150],
+    ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை ",80],["Electric stone/மின்சார கல்",20],["Kit kat/கிட் கேட்",40],
+    ["Jee boomba/ஜீ பூம்பா",20],["Ccartoon/கார்ட்டூன்",25],["Peacock Feather/",120],["Mega Peacock/மெகா மயில்",200],
+    ["Butterfly/பட்டாம்பூச்சி வெடி",150],["Bambaram/பம்பரம் ",150],["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
+    ["Diswheel/",100],["Fire feather/பயர் பெதர்",150],["Tin/டின்",110],["7 shot/ 7ஒலி வெடி",100],
+    ["Photo flash/போட்டோ  ஃபிளாஷ்",60],["Han out/ஹான் அவுட்",300],["smoke color/புகை நிறம்",150],["Siren/சைரன்",240],
+    ["Peacock red &green/மயில் சிவப்பு & பச்சை",200],["Peacock Silver/மயில் சில்வர்",200],["Golden globe/கோல்டன் குளோப்",150],
+    ["Helicopter/ஹெலிகாப்டர்",120],["21 Items giftbox/கிப்ட் பாக்ஸ்",500],["31 Items giftbox/கிப்ட் பாக்ஸ் ",650]
   ];
 
   const tbody = document.querySelector("#priceTable tbody");
@@ -295,23 +296,27 @@ function downloadPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  // === Header Background (Top Bar) ===
-  doc.setFillColor(211, 47, 47); // deep red
+  // === Header Background ===
+  doc.setFillColor(211, 47, 47); // red
   doc.rect(0, 0, 210, 20, "F");
-  doc.setFillColor(255, 152, 0); // orange strip
+  doc.setFillColor(255, 152, 0); // orange
   doc.rect(0, 20, 210, 5, "F");
 
-  // === Header Text with Emojis ===
+  // === Header Text ===
   doc.setFontSize(18);
   doc.setTextColor(255, 255, 255);
   doc.text("Tamil Crackers - Price List", 105, 14, { align: "center" });
 
-  // === Prepare Table Data ===
+  // === Prepare Table Data (ignore Tamil) ===
   const rows = [];
   document.querySelectorAll("#priceTable tbody tr").forEach((row, i) => {
-    const itemName = row.querySelector(".item-name").textContent.trim();
+    let itemName = row.querySelector(".item-name").textContent.trim();
+    // take only English part before slash `/`
+    if (itemName.includes("/")) {
+      itemName = itemName.split("/")[0].trim();
+    }
     let price = row.querySelector(".price b").textContent.trim();
-    price = price.replace(/₹/g, ""); // remove rupee symbol
+    price = price.replace(/₹/g, ""); 
     rows.push([i + 1, itemName, price]);
   });
 
@@ -456,4 +461,3 @@ function downloadTable() {
 </script>
 </body>
 </html>
-
