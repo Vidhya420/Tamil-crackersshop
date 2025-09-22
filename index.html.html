@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Tamil Crackers - Price List</title>
+<title>Tamil Crackers - Price List, 7502921335</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
   :root{
@@ -12,6 +12,7 @@
     --ink:#222;
     --paper: rgba(255,255,255,0.9);
   }
+  
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body {
@@ -33,10 +34,12 @@
     box-shadow: 0 12px 30px rgba(0,0,0,.35);
     overflow-x: auto;
   }
+  
   header{
     text-align:center;
     margin-bottom:14px;
   }
+  
   header h1{
     margin: 0 0 4px 0;
     font-size: 40px;
@@ -161,6 +164,7 @@
   .btn-ghost{
     background:#f3f3f3; color:#111;
   }
+  
 
   /* Mobile adjustments */
   @media screen and (max-width: 768px) {
@@ -184,14 +188,7 @@
 </head>
 <body>
 
-<!-- Happy Diwali Popup -->
-<div id="diwaliPopup" class="modal-backdrop" style="display:flex; background:rgba(0,0,0,0.75); align-items:center; justify-content:center;">
-  <div class="modal" style="text-align:center; background: linear-gradient(45deg,#ff9800,#d32f2f); color:#fff;">
-    <h2 style="margin:0 0 10px;">🎇 Happy Diwali! 🎆</h2>
-    <p style="margin:0 0 16px;">Welcome to Tamil Crackers Shop</p>
-    <button class="btn btn-save" onclick="closeDiwaliPopup()">✨ Celebrate ✨</button>
-  </div>
-</div>
+
 
 <div class="wrap">
   <header>
@@ -251,32 +248,82 @@
       <button class="btn btn-ghost" onclick="closeSave()">Cancel</button>
       <button class="btn btn-save" onclick="saveAndSend()">Save & Send</button>
     </div>
-	
   </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
+
 <script>
-  const ITEMS = [
-    ["7cm Sparklers/கம்பி மத்தாப்பு",15],,
-    ["10cm Sparklers/கம்பி மத்தாப்பு",22],,["15cm Sparklers/கம்பி மத்தாப்பு",40],
-    ["FP big/பெரிய புஷ்வானம்",80],["FB special/சிறப்பு புஷ்வானம்",90],["FP Small/சிறிய புஷ்வானம்",70],["GC Big(10pcs)/சிறிய சங்கு சக்கரம் ",60],
-    ["GC Ashoka/பெரிய சங்கு சக்கரம்",100],["1 1/2 Twinkling star/சிறிய சாட்டை",40],["4' Twinkling star/பெரிய சாட்டை",80],
-    ["7cm Pencil/பென்சில்",30],["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],["Bigili/பிஜிலி",20],["Kuruvi/பிஜிலி",10],
-    ["4 Lakhmi/லட்சுமி வெடி",20],["2 Sound/2 ஒலி வெடி",35],["6' Laksh/லட்சுமி வெடி",55],["4' Inch gold/கோல்டு வெடி",30],
-    ["5' Inch gold/கோல்டு வெடி",35],["6' Inch gold/கோல்டு வெடி",40],["12 Shot/வானம்",250],["60 Shot/வானம்",1200],
-    ["120 Shot/வானம்",2000],["28 Giant/சரம்",12],["100 Giant/சரம்",40],["1k Wala/சரம்",200],
-    ["2k Wala/சரம்",400],["5k Wala/சரம்",1000],["10k Wala/சரம்",2000],["Star War/சரம்",150],
-    ["Colour Koti/வண்ண கோட்டி",220],["Rocket bomb/ராக்கெட் குண்டு",100],["Color rain/வண்ண மழை",150],
-    ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை ",80],["Electric stone/மின்சார கல்",20],["Kit kat/கிட் கேட்",40],
-    ["Jee boomba/ஜீ பூம்பா",20],["Ccartoon/கார்ட்டூன்",25],["Peacock Feather/",120],["Mega Peacock/மெகா மயில்",200],
-    ["Butterfly/பட்டாம்பூச்சி வெடி",150],["Bambaram/பம்பரம் ",150],["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
-    ["Diswheel/",100],["Fire feather/பயர் பெதர்",150],["Tin/டின்",110],["7 shot/ 7ஒலி வெடி",100],
-    ["Photo flash/போட்டோ  ஃபிளாஷ்",60],["Han out/ஹான் அவுட்",300],["smoke color/புகை நிறம்",150],["Siren/சைரன்",240],
-    ["Peacock red &green/மயில் சிவப்பு & பச்சை",200],["Peacock Silver/மயில் சில்வர்",200],["Golden globe/கோல்டன் குளோப்",150],
-    ["Helicopter/ஹெலிகாப்டர்",120],["21 Items giftbox/கிப்ட் பாக்ஸ்",500],["31 Items giftbox/கிப்ட் பாக்ஸ் ",650]
-  ];
+const ITEMS = [
+  ["7cm Sparklers/கம்பி மத்தாப்பு",15],
+  ["10cm Sparklers/கம்பி மத்தாப்பு",22],
+  ["15cm Sparklers/கம்பி மத்தாப்பு",40],
+  ["FP big/பெரிய புஷ்வானம்",80],
+  ["FB special/சிறப்பு புஷ்வானம்",90],
+  ["FP Small/சிறிய புஷ்வானம்",70],
+  ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",60],
+  ["GC Ashoka/பெரிய சங்கு சக்கரம்",100],
+  ["one and half inch Twinklingg star/சிறிய சாட்டை",40],
+  ["4' Twinkling star/பெரிய சாட்டை",80],
+  ["7cm Pencil/பென்சில்",30],
+  ["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],
+  ["Bigili/பிஜிலி",20],
+  ["Kuruvi/பிஜிலி",10],
+  ["Match Box/மேட்ச் பாக்ஸ்",20],
+  ["Snake Tab/பாம்பு மாத்திரை",40],
+  ["4 Lakhmi/லட்சுமி வெடி",20],
+  ["2 Sound/2 ஒலி வெடி",35],
+  ["6' Laksh/லட்சுமி வெடி",55],
+  ["4' Inch gold/கோல்டு வெடி",30],
+  ["6' Inch gold/கோல்டு வெடி",40],
+  ["big gold/பெரிய கோல்டு வெடி",40],
+  ["12 Shot/வானம்",250],
+  ["60 Shot/வானம்",1200],
+  ["120 Shot/வானம்",2000],
+  ["28 Giant/சரம்",12],
+  ["100 Giant/சரம்",40],
+  ["1k Wala/சரம்",200],
+  ["2k Wala/சரம்",400],
+  ["5k Wala/சரம்",1000],
+  ["10k Wala/சரம்",2000],
+  ["Star War/சரம்",150],
+  ["Colour Koti/வண்ண கோட்டி",220],
+  ["Rocket bomb/ராக்கெட் குண்டு",100],
+  ["Color rain/வண்ண மழை",150],
+  ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை",80],
+  ["Electric stone/மின்சார கல்",20],
+  ["Kit kat/கிட் கேட்",40],
+  ["Jee boomba/ஜீ பூம்பா",20],
+  ["Ccartoon/கார்ட்டூன்",25],
+  ["Peacock Feather",120],
+  ["Mega Peacock/மெகா மயில்",200],
+  ["Butterfly/பட்டாம்பூச்சி வெடி",150],
+  ["Bambaram/பம்பரம்",150],
+  ["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
+  ["Diswheel",100],
+  ["Fire feather/பயர் பெதர்",150],
+  ["Tin/டின்",110],
+  ["7 shot/7 ஒலி வெடி",100],
+  ["Photo flash/போட்டோ ஃபிளாஷ்",60],
+  ["Han out/ஹான் அவுட்",300],
+  ["Smoke color/புகை நிறம்",150],
+  ["Siren/சைரன்",240],
+  ["Peacock red & green/மயில் சிவப்பு & பச்சை",200],
+  ["Peacock Silver/மயில் சில்வர்",200],
+  ["Golden globe/கோல்டன் குளோப்",150],
+  ["Helicopter/ஹெலிகாப்டர்",120],
+  ["Bada Peacock/மெகா மயில்",400],
+  ["Tri color",320],
+  ["Once More",300],
+  ["Single shot/வானம்",70],
+  ["Big Tin",150],
+  ["Ganga and Yamuna/கங்கை மற்றும் யமுனா",150],
+  ["Battery Rocket/பேட்டரி ராக்கெட்",500],
+  ["21 Items giftbox/கிப்ட் பாக்ஸ்",500],
+  ["31 Items giftbox/கிப்ட் பாக்ஸ்",650]
+];
+
 
   const tbody = document.querySelector("#priceTable tbody");
   ITEMS.forEach((it, i) => {
@@ -353,7 +400,7 @@ function downloadPDF() {
   doc.rect(0, finalY, 210, 12, "F");
   doc.setTextColor(0, 0, 0);
   doc.setFontSize(11);
-  doc.text("Thank you for shopping with Tamil Crackers! Happy Diwali!", 105, finalY + 8, { align: "center" });
+  doc.text("ECR to Iyyanar Kovil salai, Palaiyur, Nagapattinam. Thank you for shopping with Tamil Crackers! Happy Diwali!", 105, finalY + 8, { align: "center" });
 
   // === Save PDF ===
   doc.save("Tamil_Crackers_Item_Price.pdf");
@@ -391,7 +438,7 @@ function downloadTable() {
   let blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
   let link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "Tamil_Crackers_Price_List.csv";
+  link.download = "_Crackers_Price_List.csv";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
