@@ -130,6 +130,35 @@
     color:#eee;
     margin-top:8px;
   }
+.coupon-container {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.coupon-container label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.coupon-container input {
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.coupon-container input:focus {
+  border-color: #4CAF50;
+}
+
+#discountDisplay {
+  font-weight: bold;
+  color: limegreen;
+}
 
   /* Modal */
   .modal-backdrop{
@@ -218,13 +247,19 @@
     </table>
 
     <div class="actions">
+	<div class="coupon-container">
+  <label for="couponCode">Coupon Code:</label>
+  <input type="text" id="couponCode" placeholder="Enter coupon code" oninput="applyCoupon()" />
+  <span id="discountDisplay"></span>
+</div>
+
+
 <button class="btn btn-save" onclick="downloadPDF()">📄 Download PDF</button>
 
 
       <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
       <button class="btn btn-save" onclick="openSave()">💾 Order</button>
     </div>
-    <div class="legend">Tip: For background graphics when printing, in Chrome print dialog enable “Background graphics”.</div>
   </div>
 </div>
 
@@ -278,7 +313,6 @@ const ITEMS = [
   ["6' Inch gold/கோல்டு வெடி",40],
   ["big gold/பெரிய கோல்டு வெடி",80],
   ["12 Shot/வானம்",250],
-  ["30 Shot/வானம்",600]
   ["60 Shot/வானம்",1200],
   ["120 Shot/வானம்",2000],
   ["28 Giant/சரம்",20],
@@ -339,6 +373,24 @@ const ITEMS = [
     `;
     tbody.appendChild(tr);
   });
+  
+  let currentDiscount = 0;
+
+function applyCoupon(){
+  const code = document.getElementById("couponCode").value.trim().toUpperCase();
+  if(code === "SG2025"){
+    currentDiscount = 0.20; // 20%
+  } else if(code === "PLR2025"){
+    currentDiscount = 0.10; // 10%
+  } else if(code === "EGS2025"){
+    currentDiscount = 0.20; // 20%
+  } else {
+    currentDiscount = 0; // no discount
+  }
+  updateGrandTotal();
+}
+
+
 function downloadPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
@@ -415,10 +467,22 @@ function downloadPDF() {
   }
 
   function updateGrandTotal(){
-    let total = 0;
-    document.querySelectorAll(".finalPrice").forEach(td => { total += parseFloat(td.textContent) || 0; });
-    document.getElementById("grandTotal").textContent = total.toString();
+  let total = 0;
+  document.querySelectorAll(".finalPrice").forEach(td => { total += parseFloat(td.textContent) || 0; });
+
+  let discountAmount = total * currentDiscount;
+  let discountedTotal = total - discountAmount;
+
+  document.getElementById("grandTotal").textContent = discountedTotal.toFixed(2);
+
+  const discountDisplay = document.getElementById("discountDisplay");
+  if(currentDiscount > 0){
+    discountDisplay.textContent = `Discount: ₹${discountAmount.toFixed(2)} (${currentDiscount*100}%)`;
+  } else {
+    discountDisplay.textContent = "";
   }
+}
+
 function downloadTable() {
   let table = document.getElementById("priceTable");
   let rows = table.querySelectorAll("tr");
@@ -508,4 +572,3 @@ function downloadTable() {
 </script>
 </body>
 </html>
-
