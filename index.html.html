@@ -1,573 +1,554 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Tamil Crackers - Price List, 7502921335</title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style>
-  :root{
-    --brand: #d32f2f;
-    --brand2:#ff9800;
-    --gold:#ffd54f;
-    --ink:#222;
-    --paper: rgba(255,255,255,0.9);
-  }
-  
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    background: url("bg.crackers.jpg") no-repeat center center fixed;
-    background-size: cover;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tamil Crackers — Price List (Modern Flat UI)</title>
 
-  .wrap{
-    width: 95%;
-    max-width: 980px;
-    margin: 24px auto;
-    background: rgba(0,0,0,0.55);
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
-    overflow-x: auto;
-  }
-  
-  header{
-    text-align:center;
-    margin-bottom:14px;
-  }
-  
-  header h1{
-    margin: 0 0 4px 0;
-    font-size: 40px;
-    color: var(--gold);
-    text-shadow: 0 2px 8px #000;
-  }
-  header p{margin:2px 0 0 0;font-size:14px;}
-  .card{
-    background: var(--paper);
-    color: var(--ink);
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,.18);
-    overflow-x: auto;
-  }
-  table{
-    width:100%;
-    border-collapse: collapse;
-    border-radius: 12px;
-    overflow: hidden;
-    font-size: 14px;
-  }
-  thead th{
-    background: linear-gradient(45deg, var(--brand), var(--brand2));
-    color:#fff;
-    padding:10px 6px;
-    border:1px solid rgba(255,255,255,.35);
-    text-align:center;
-  }
-  td{
-    border:1px solid #e7e7e7;
-    padding:6px 6px;
-    text-align:center;
-    white-space: nowrap;
-  }
-  td.item-name{
-    text-align:left;
-    white-space: normal;
-  }
-  td.price s{
-    color: #888;
-    margin-right: 4px;
-  }
-  td.price b{
-    color: #c62828;
-  }
-  tbody tr:nth-child(even) td{ background: #fff8e6; }
-  tbody tr:nth-child(odd) td{ background: #ffffff; }
-  input[type="number"]{
-    width:64px;
-    padding:4px;
-    font-size:13px;
-    text-align:center;
-    border:1px solid #bbb;
-    border-radius:6px;
-    outline:none;
-  }
-  tfoot td{
-    font-weight:700;
-    background: #ffe082;
-  }
-  .actions{
-    position: sticky;
-    bottom: 0;
-    background: rgba(0,0,0,0.55);
-    padding: 8px 0;
-    z-index: 2;
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-  .btn{
-    appearance:none;
-    border:none;
-    border-radius: 999px;
-    padding:10px 18px;
-    font-weight:700;
-    cursor:pointer;
-    box-shadow: 0 6px 18px rgba(0,0,0,.2);
-  }
-  .btn-print{ background: linear-gradient(45deg, #1976d2, #26a69a); color:#fff; }
-  .btn-save{ background: linear-gradient(45deg, #ef6c00, #fdd835); color:#1a1a1a; }
-  .legend{
-    text-align:center;
-    font-size:12px;
-    color:#eee;
-    margin-top:8px;
-  }
-.coupon-container {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-.coupon-container label {
-  font-weight: bold;
-  font-size: 14px;
-}
+  <style>
+    :root{
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #ff6b4a;      /* orange-red */
+      --accent-2: #4f46e5;    /* indigo */
+      --success: #10b981;
+      --glass: rgba(79,70,229,0.06);
+      --radius: 12px;
+      --shadow: 0 8px 24px rgba(15,23,42,0.06);
+      --maxw: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#0f172a;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:28px auto;padding:20px;display:grid;gap:18px;grid-template-columns: 360px 1fr;}
+    @media (max-width:900px){ .wrap{grid-template-columns:1fr;padding:14px} }
 
-.coupon-container input {
-  padding: 6px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
+    /* left panel */
+    .panel{
+      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:14px;
+    }
+    .brand{
+      display:flex;gap:12px;align-items:center;
+    }
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(79,70,229,0.12);
+    }
+    .brand h1{margin:0;font-size:16px}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
 
-.coupon-container input:focus {
-  border-color: #4CAF50;
-}
+    .contact{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+    .meta{display:flex;gap:8px;flex-wrap:wrap}
 
-#discountDisplay {
-  font-weight: bold;
-  color: limegreen;
-}
+    /* coupon */
+    .coupon{
+      background:var(--glass);border-radius:10px;padding:10px;display:flex;gap:8px;align-items:center;
+    }
+    .coupon input{flex:1;padding:8px;border:1px solid #e6e9f2;border-radius:8px;font-size:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;padding:9px 12px;border-radius:10px;font-weight:600;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#ff8a66);color:white;box-shadow:0 6px 18px rgba(255,107,74,0.12)}
+    .btn-ghost{background:#fff;border:1px solid #eef2ff;color:var(--accent-2)}
+    .help{font-size:12px;color:var(--muted)}
 
-  /* Modal */
-  .modal-backdrop{
-    position: fixed; inset:0;
-    background: rgba(0,0,0,.55);
-    display:none; align-items:center; justify-content:center;
-    padding: 16px;
-    z-index: 10;
-  }
-  .modal{
-    width:95%;
-    max-width:520px;
-    background: #ffffff;
-    color:#111;
-    border-radius:14px;
-    padding:16px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
-  }
-  .modal h3{ margin: 6px 0 12px; color:#c62828; }
-  .field{ margin-bottom:10px; }
-  .field label{ display:block; font-size:13px; margin-bottom:4px; }
-  .field input, .field textarea{
-    width:100%;
-    padding:10px;
-    border:1px solid #cfcfcf;
-    border-radius:10px;
-    font-size:14px;
-  }
-  .modal-actions{
-    display:flex; gap:10px; justify-content:flex-end; margin-top:8px;
-  }
-  .btn-ghost{
-    background:#f3f3f3; color:#111;
-  }
-  
+    /* main panel */
+    .main{display:flex;flex-direction:column;gap:14px}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px}
+    .table-wrap{overflow:auto;border-radius:8px;border:1px solid #eef2ff}
+    table{width:100%;border-collapse:collapse;font-size:14px}
+    thead th{background:#fafafa;padding:12px 10px;text-align:left;color:var(--muted);font-weight:600;font-size:13px;border-bottom:1px solid #f1f5f9}
+    tbody td{padding:10px;border-bottom:1px solid #f8fafc;vertical-align:middle}
+    td.center{text-align:center}
+    td.right{text-align:right}
+    .item-name{font-weight:600;color:#0b1220}
+    .small{font-size:13px;color:var(--muted)}
+    input.qty{width:72px;padding:8px;border-radius:8px;border:1px solid #e6e9f2;font-size:14px;text-align:center}
+    .price-old{font-size:12px;color:#9aa3b2;text-decoration:line-through;margin-right:6px}
+    .price-now{font-weight:700;color:#0b1220}
 
-  /* Mobile adjustments */
-  @media screen and (max-width: 768px) {
-    header h1 { font-size: 28px; }
-    header p { font-size: 12px; }
-    table { font-size: 12px; }
-    input[type="number"] { width: 50px; font-size: 12px; padding: 3px; }
-    .btn { padding: 8px 14px; font-size: 14px; }
-  }
+    /* totals bar sticky */
+    .totals{
+      display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 6px 18px rgba(14,22,44,0.02);
+      gap:12px;
+    }
+    .grand{font-size:20px;font-weight:700;color:#0b1220}
+    .discount{font-size:13px;color:var(--muted)}
 
-  /* Print styles */
-  @media print {
-    body{ background: none; }
-    .wrap{ background: none; box-shadow: none; padding: 0; }
-    .legend, .actions, .modal-backdrop{ display:none !important; }
-    header h1{ color:#000; text-shadow:none; }
-    header p{ color:#000; }
-    .card{ box-shadow:none; }
-  }
-</style>
+    /* footer actions */
+    .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .actions .btn{padding:10px 14px;border-radius:10px}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:none;align-items:center;justify-content:center;padding:18px;z-index:60}
+    .modal{width:100%;max-width:520px;background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow)}
+    .field{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+    label{font-size:13px;color:var(--muted)}
+    input[type="text"],textarea{padding:10px;border-radius:8px;border:1px solid #eef2ff;font-size:14px}
+    textarea{min-height:86px;resize:vertical}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{display:grid;place-items:center}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #eef2ff;font-weight:600}
+
+    /* print adjustments */
+    @media print{
+      body{background:white}
+      .wrap{box-shadow:none}
+      .panel, .actions, .coupon, .modal-backdrop{display:none}
+      .table-wrap{border: none}
+      thead th{background:#eee !important}
+    }
+
+  </style>
 </head>
 <body>
 
+  <div class="wrap" role="application" aria-label="Tamil Crackers Price List App">
+    <!-- LEFT: Brand / Controls -->
+    <aside class="panel" aria-labelledby="brandTitle">
+      <div class="brand" id="brandTitle">
+        <div class="logo">TC</div>
+        <div>
+          <h1>Tamil Crackers</h1>
+          <p class="small">Price List • Iyyanar Kovil Salai, Palaiyur</p>
+        </div>
+      </div>
 
+      <div class="contact">
+        <div><strong>Contact</strong></div>
+        <div class="meta small">
+          <div>📞 7502921335</div>
+          <div>📞 9095621569</div>
+        </div>
+      </div>
 
-<div class="wrap">
-  <header>
-    <h1>🎆 Tamil Crackers Shop 🎇</h1>
-    <p>40, Iyyanar Kovil Salai, Palaiyur, Nagapattinam</p>
-    <p>📞 7502921335, 9095621569</p>
-  </header>
+      <div>
+        <div class="help">Search items</div>
+        <input id="search" type="text" placeholder="Search by name or part of Tamil/English" style="width:100%;padding:10px;border-radius:10px;border:1px solid #eef2ff;margin-top:8px;font-size:14px">
+      </div>
 
-  <div class="card">
-    <table id="priceTable" aria-label="Price List">
-      <thead>
-        <tr>
-          <th>No</th>
-          <th>Item Name</th>
-          <th>Price (₹)</th>
-          <th>Qty</th>
-          <th>Final Price (₹)</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-      <tfoot>
-        <tr>
-          <td colspan="4" style="text-align:right">Grand Total</td>
-          <td id="grandTotal">0</td>
-        </tr>
-      </tfoot>
-    </table>
+      <div>
+        <div class="help">Apply coupon (optional)</div>
+        <div class="coupon" style="margin-top:8px">
+          <input id="couponCode" placeholder="e.g. SG2025, PLR2025, EGS2025, NATPU, OMBU" aria-label="Coupon code">
+          <button class="btn btn-primary" onclick="applyCoupon()">Apply</button>
+        </div>
+        <div id="couponResult" class="help" style="margin-top:8px"></div>
+      </div>
 
-    <div class="actions">
-	<div class="coupon-container">
- 
-</div>
+      <div>
+        <div class="help">Quick actions</div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+          <button class="btn btn-ghost" onclick="downloadCSV()" title="Download CSV">CSV</button>
+          <button class="btn btn-ghost" onclick="downloadPDF()" title="Download PDF">PDF</button>
+          <button class="btn btn-ghost" onclick="printOnlyWithQty()" title="Print">Print</button>
+        </div>
+      </div>
 
+      <div style="margin-top:auto">
+        <div class="small muted">Notes</div>
+        <div class="small muted" style="margin-top:6px">
+          • Enter quantities to build your order. <br>
+          • Use the Order button to send via WhatsApp or Email.
+        </div>
+      </div>
+    </aside>
 
-<button class="btn btn-save" onclick="downloadPDF()">📄 Download PDF</button>
+    <!-- RIGHT: Table and totals -->
+    <main class="main" aria-live="polite">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+          <div>
+            <div class="small muted">Price List</div>
+            <div style="font-weight:700;font-size:18px">Items & Prices</div>
+          </div>
+          <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2v20" stroke="#c7c9d9" stroke-width="1.5" stroke-linecap="round"/></svg> Flat / Modern</div>
+        </div>
 
+        <div class="table-wrap" id="tableWrap" role="region" aria-label="Price list table">
+          <table id="priceTable" aria-describedby="priceTableDesc">
+            <caption id="priceTableDesc" style="display:none">Table of items, price and quantity</caption>
+            <thead>
+              <tr>
+                <th style="width:48px">#</th>
+                <th>Item</th>
+                <th style="width:140px">Price</th>
+                <th style="width:120px">Qty</th>
+                <th style="width:120px;text-align:right">Total</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
 
-      <button class="btn btn-print" onclick="printOnlyWithQty()">🖨️ Print</button>
-      <button class="btn btn-save" onclick="openSave()">💾 Order</button>
+        <div style="margin-top:12px" class="totals" aria-hidden="false">
+          <div>
+            <div class="discount" id="discountLine">No discount applied</div>
+            <div class="small muted" style="margin-top:6px">Tip: Click "Print" to print only selected quantities</div>
+          </div>
+          <div style="text-align:right">
+            <div class="small muted">Grand total</div>
+            <div class="grand" id="grandTotal">₹0.00</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
+          <div class="small muted">Selected items will be included in order</div>
+          <div class="actions" role="group" aria-label="Actions">
+            <button class="btn btn-primary" onclick="openOrderModal()">Order</button>
+            <button class="btn btn-ghost" onclick="downloadCSV()">Export CSV</button>
+            <button class="btn btn-ghost" onclick="downloadPDF()">Download PDF</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <h2 style="margin:0 0 8px 0">Save & Send Order</h2>
+      <div class="field">
+        <label for="custName">Customer name</label>
+        <input id="custName" type="text" placeholder="Enter name" />
+      </div>
+      <div class="field">
+        <label for="custAddress">Delivery address</label>
+        <textarea id="custAddress" placeholder="Door no, street, area, city, pincode"></textarea>
+      </div>
+      <div class="field">
+        <label for="custMobile">Mobile number</label>
+        <input id="custMobile" type="text" placeholder="7502921335" />
+      </div>
+
+      <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
+        <button class="btn btn-ghost" onclick="closeOrderModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveAndSend()">Send (WhatsApp + Email)</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Save Modal -->
-<div id="saveModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="saveTitle">
-  <div class="modal">
-    <h3 id="saveTitle">Save & Send Details</h3>
-    <div class="field">
-      <label for="custName">Name</label>
-      <input id="custName" type="text" placeholder="Your name" />
-    </div>
-    <div class="field">
-      <label for="custAddress">Address</label>
-      <textarea id="custAddress" rows="3" placeholder="Door No, Street, Area, City, Pincode"></textarea>
-    </div>
-    <div class="field">
-      <label for="custMobile">Mobile Number</label>
-      <input id="custMobile" type="tel" placeholder="Your mobile number" />
-    </div>
-    <div class="modal-actions">
-      <button class="btn btn-ghost" onclick="closeSave()">Cancel</button>
-      <button class="btn btn-save" onclick="saveAndSend()">Save & Send</button>
-    </div>
-  </div>
-</div>
+  <!-- Minimal dependencies: jsPDF & autotable (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
+  <script>
+    // ---------- Data (same items you provided) ----------
+    const ITEMS = [
+      ["7cm Sparklers/கம்பி மத்தாப்பு",15],
+      ["10cm Sparklers/கம்பி மத்தாப்பு",22],
+      ["15cm Sparklers/கம்பி மத்தாப்பு",45],
+      ["30cm Sparklers/கம்பி மத்தாப்பு",60],
+      ["FP big/பெரிய புஷ்வானம்",90],
+      ["FB special/சிறப்பு புஷ்வானம்",140],
+      ["Colour Koti/வண்ண கோட்டி",220],
+      ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",70],
+      ["GC Special(25pcs)/சிறிய சங்கு சக்கரம்",120],
+      ["GC Special/பெரிய சங்கு சக்கரம்",150],
+      ["one and half inch Twinklingg star/சிறிய சாட்டை",50],
+      ["4' Twinkling star/பெரிய சாட்டை",90],
+      ["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],
+      ["Bigili(50pcs)/பிஜிலி",20],
+      ["Kuruvi",10],
+      ["Match Box/மேட்ச் பாக்ஸ்",20],
+      ["Snake Tab/பாம்பு மாத்திரை",50],
+      ["4 Lakhmi/லட்சுமி வெடி",20],
+      ["2 Sound/2 ஒலி வெடி",40],
+      ["6' Laksh/லட்சுமி வெடி",55],
+      ["4' Inch gold/கோல்டு வெடி",30],
+      ["6' Inch gold/கோல்டு வெடி",40],
+      ["big gold/பெரிய கோல்டு வெடி",80],
+      ["12 Shot/வானம்",250],
+      ["60 Shot/வானம்",1200],
+      ["120 Shot/வானம்",2000],
+      ["28 Giant/சரம்",20],
+      ["100 Giant/சரம்",50],
+      ["1k Wala/சரம்",250],
+      ["2k Wala/சரம்",500],
+      ["5k Wala/சரம்",1250],
+      ["10k Wala/சரம்",2000],
+      ["Rocket bomb/ராக்கெட் குண்டு",100],
+      ["Color rain/வண்ண மழை",150],
+      ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை",150],
+      ["Electric stone/மின்சார கல்",30],
+      ["Jee boomba/ஜீ பூம்பா",30],
+      ["Ccartoon/கார்ட்டூன்",25],
+      ["Fire Feather",150],
+      ["Mega Peacock/மெகா மயில்",200],
+      ["Butterfly/பட்டாம்பூச்சி வெடி",150],
+      ["Bambaram/பம்பரம்",150],
+      ["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
+      ["Diswheel",100],
+      ["Tin/டின்",110],
+      ["Big Tin",150],
+      ["Photo flash/போட்டோ ஃபிளாஷ்",60],
+      ["Han out/ஹான் அவுட்",300],
+      ["Smoke color/புகை நிறம்",150],
+      ["Siren/சைரன்",240],
+      ["Peacock red & green/மயில் சிவப்பு & பச்சை",200],
+      ["Golden globe/கோல்டன் குளோப்",180],
+      ["Helicopter/ஹெலிகாப்டர்",120],
+      ["Bada Peacock/மெகா மயில்",400],
+      ["Tri color",320],
+      ["Once More/வானம்",300],
+      ["Single shot/வானம்",100],
+      ["Ganga and Yamuna/கங்கை மற்றும் யமுனா",150],
+      ["Battery Rocket 10pcs/பேட்டரி ராக்கெட்",100],
+      ["21 Items giftbox/கிப்ட் பாக்ஸ்",500],
+      ["31 Items giftbox/கிப்ட் பாக்ஸ்",650]
+    ];
 
-<script>
-const ITEMS = [
-  ["7cm Sparklers/கம்பி மத்தாப்பு",15],
-  ["10cm Sparklers/கம்பி மத்தாப்பு",22],
-  ["15cm Sparklers/கம்பி மத்தாப்பு",45],
-  ["30cm Sparklers/கம்பி மத்தாப்பு",60],
-  ["FP big/பெரிய புஷ்வானம்",90],
-  ["FB special/சிறப்பு புஷ்வானம்",120],
-  ["Colour Koti/வண்ண கோட்டி",220],
-  ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",70],
-  ["GC Special(25pcs)/சிறிய சங்கு சக்கரம்",120],
-  ["GC Special/பெரிய சங்கு சக்கரம்",150],
-  ["one and half inch Twinklingg star/சிறிய சாட்டை",50],
-  ["4' Twinkling star/பெரிய சாட்டை",90],
-  ["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],
-  ["Bigili(50pcs)/பிஜிலி",20],
-  ["Kuruvi",10],
-  ["Match Box/மேட்ச் பாக்ஸ்",20],
-  ["Snake Tab/பாம்பு மாத்திரை",50],
-  ["4 Lakhmi/லட்சுமி வெடி",20],
-  ["2 Sound/2 ஒலி வெடி",40],
-  ["6' Laksh/லட்சுமி வெடி",55],
-  ["4' Inch gold/கோல்டு வெடி",30],
-  ["6' Inch gold/கோல்டு வெடி",40],
-  ["big gold/பெரிய கோல்டு வெடி",80],
-  ["12 Shot/வானம்",250],
-  ["60 Shot/வானம்",1200],
-  ["120 Shot/வானம்",2000],
-  ["28 Giant/சரம்",20],
-  ["100 Giant/சரம்",50],
-  ["1k Wala/சரம்",250],
-  ["2k Wala/சரம்",500],
-  ["5k Wala/சரம்",1250],
-  ["10k Wala/சரம்",2000],
-  ["Rocket bomb/ராக்கெட் குண்டு",100],
-  ["Color rain/வண்ண மழை",150],
-  ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை",150],
-  ["Electric stone/மின்சார கல்",30],
-  ["Jee boomba/ஜீ பூம்பா",30],
-  ["Ccartoon/கார்ட்டூன்",25],
-  ["Fire Feather",150],
-  ["Mega Peacock/மெகா மயில்",200],
-  ["Butterfly/பட்டாம்பூச்சி வெடி",150],
-  ["Bambaram/பம்பரம்",150],
-  ["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
-  ["Diswheel",100],
-  ["Tin/டின்",110],
-  ["Big Tin",150],
-  ["Photo flash/போட்டோ ஃபிளாஷ்",60],
-  ["Han out/ஹான் அவுட்",300],
-  ["Smoke color/புகை நிறம்",150],
-  ["Siren/சைரன்",240],
-  ["Peacock red & green/மயில் சிவப்பு & பச்சை",200],
-  ["Golden globe/கோல்டன் குளோப்",180],
-  ["Helicopter/ஹெலிகாப்டர்",120],
-  ["Bada Peacock/மெகா மயில்",400],
-  ["Tri color",320],
-  ["Once More/வானம்",300],
-  ["Single shot/வானம்",100],
-  ["Ganga and Yamuna/கங்கை மற்றும் யமுனா",150],
-  ["Battery Rocket 10pcs/பேட்டரி ராக்கெட்",100],
-  ["21 Items giftbox/கிப்ட் பாக்ஸ்",500],
-  ["31 Items giftbox/கிப்ட் பாக்ஸ்",650]
-];
+    // coupon map
+    const COUPONS = {
+      "SG2025": 0.20,
+      "PLR2025": 0.10,
+      "EGS2025": 0.20,
+      "NATPU": 0.15,
+      "OMBU": 0.15
+    };
 
+    // state
+    let currentDiscount = 0;
+    let rows = []; // will hold DOM row elements for quick access
 
-  const tbody = document.querySelector("#priceTable tbody");
-  ITEMS.forEach((it, i) => {
-    const tr = document.createElement("tr");
-    const discountedPrice = it[1];
-    const mrp = (discountedPrice / 0.5).toFixed(0); // 50% MRP
-    tr.innerHTML = `
-      <td>${i+1}</td>
-      <td class="item-name">${it[0]}</td>
-      <td class="price"><s>₹${mrp}</s> <b>₹${discountedPrice}</b></td>
-      <td><input type="number" min="0" value="0" oninput="updateRow(this)" /></td>
-      <td class="finalPrice">0</td>
-    `;
-    tbody.appendChild(tr);
-  });
-  
-  let currentDiscount = 0;
+    // build table
+    const tbody = document.querySelector("#priceTable tbody");
+    ITEMS.forEach((it, i) => {
+      const [name, price] = it;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="center">${i+1}</td>
+        <td>
+          <div class="item-name">${escapeHtml(name)}</div>
+          <div class="small muted">${name.includes('/') ? name.split('/')[1].trim() : ''}</div>
+        </td>
+        <td>
+          <span class="price-old">₹${Math.round(price/0.5)}</span>
+          <span class="price-now">₹${price}</span>
+        </td>
+        <td class="center"><input class="qty" type="number" min="0" value="0" data-index="${i}" aria-label="Quantity for ${name}"></td>
+        <td class="right totalCell">₹0.00</td>
+      `;
+      tbody.appendChild(tr);
+      rows.push(tr);
+    });
 
-function applyCoupon(){
-  const code = document.getElementById("couponCode").value.trim().toUpperCase();
-  if(code === "SG2025"){
-    currentDiscount = 0.20; // 20%
-  } else if(code === "PLR2025"){
-    currentDiscount = 0.10; // 10%
-  } else if(code === "EGS2025"){
-    currentDiscount = 0.20; // 20%
-  } else if(code === "NATPU"){
-    currentDiscount = 0.15; // 10%
-  } else if(code === "OMBU"){
-    currentDiscount = 0.15; // 10%
-  } else {
-    currentDiscount = 0; // no discount
-  }
-  updateGrandTotal();
-}
-
-
-function downloadPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  // === Header Background ===
-  doc.setFillColor(211, 47, 47); // red
-  doc.rect(0, 0, 210, 20, "F");
-  doc.setFillColor(255, 152, 0); // orange
-  doc.rect(0, 20, 210, 5, "F");
-
-  // === Header Text ===
-  doc.setFontSize(18);
-  doc.setTextColor(255, 255, 255);
-  doc.text("Tamil Crackers - Price List", 105, 14, { align: "center" });
-
-  // === Prepare Table Data (ignore Tamil) ===
-  const rows = [];
-  document.querySelectorAll("#priceTable tbody tr").forEach((row, i) => {
-    let itemName = row.querySelector(".item-name").textContent.trim();
-    // take only English part before slash `/`
-    if (itemName.includes("/")) {
-      itemName = itemName.split("/")[0].trim();
+    // calculate helpers
+    function updateRow(input){
+      const idx = +input.dataset.index;
+      const qty = Math.max(0, parseInt(input.value || 0, 10));
+      const price = ITEMS[idx][1] || 0;
+      const total = qty * price;
+      rows[idx].querySelector(".totalCell").textContent = `₹${numberFormat(total)}`;
+      updateGrandTotal();
     }
-    let price = row.querySelector(".price b").textContent.trim();
-    price = price.replace(/₹/g, ""); 
-    rows.push([i + 1, itemName, price]);
-  });
 
-  // === Styled Table ===
-  doc.autoTable({
-    startY: 30,
-    head: [["No", "Item Name", "Price"]],
-    body: rows,
-    theme: "grid",
-    headStyles: {
-      fillColor: [255, 215, 0],
-      textColor: 0,
-      fontStyle: "bold",
-      halign: "center"
-    },
-    bodyStyles: {
-      textColor: 40,
-      fillColor: [255, 255, 255],
-      fontSize: 10
-    },
-    alternateRowStyles: {
-      fillColor: [255, 248, 230]
-    },
-    columnStyles: {
-      0: { cellWidth: 15, halign: "center" },
-      1: { cellWidth: 120 },
-      2: { cellWidth: 40, halign: "right" }
+    function updateGrandTotal(){
+      let total = 0;
+      rows.forEach((r, i) => {
+        const cell = r.querySelector(".totalCell").textContent.replace(/[^0-9.]/g,'') || "0";
+        total += parseFloat(cell);
+      });
+      const discountAmt = total * currentDiscount;
+      const discounted = total - discountAmt;
+      document.getElementById("grandTotal").textContent = `₹${numberFormat(discounted)}`;
+      const line = document.getElementById("discountLine");
+      if(currentDiscount > 0){
+        line.textContent = `Discount: ₹${numberFormat(discountAmt)} (${Math.round(currentDiscount*100)}%)`;
+        line.style.color = "var(--success)";
+      } else {
+        line.textContent = "No discount applied";
+        line.style.color = "";
+      }
     }
-  });
 
-  // === Footer ===
-  const finalY = doc.lastAutoTable.finalY + 8;
-  doc.setFillColor(255, 215, 0);
-  doc.rect(0, finalY, 210, 12, "F");
-  doc.setTextColor(0, 0, 0);
-  doc.setFontSize(11);
-  doc.text("ECR to Iyyanar Kovil salai, Palaiyur, Nagapattinam. Thank you for shopping with Tamil Crackers! Happy Diwali!", 105, finalY + 8, { align: "center" });
+    // attach qty listeners (delegation for performance)
+    document.querySelectorAll("input.qty").forEach(inp => {
+      inp.addEventListener("input", () => updateRow(inp));
+      inp.addEventListener("change", () => updateRow(inp));
+    });
 
-  // === Save PDF ===
-  doc.save("Tamil_Crackers_Item_Price.pdf");
-}
+    // search
+    document.getElementById("search").addEventListener("input", e => {
+      const q = e.target.value.trim().toLowerCase();
+      rows.forEach((r, i) => {
+        const text = ITEMS[i][0].toLowerCase();
+        r.style.display = text.includes(q) ? "" : "none";
+      });
+    });
 
-  function updateRow(input){
-    const priceText = input.closest("tr").querySelector(".price b").textContent;
-    const price = parseFloat(priceText.replace(/[^0-9.]/g,'')) || 0;
-    const qty = parseInt(input.value, 10) || 0;
-    input.closest("tr").querySelector(".finalPrice").textContent = (price * qty).toString();
+    // coupon
+    function applyCoupon(){
+      const code = (document.getElementById("couponCode").value || "").trim().toUpperCase();
+      if(!code){ currentDiscount = 0; showCouponMsg("Please enter a coupon code", true); updateGrandTotal(); return; }
+      if(COUPONS[code] != null){
+        currentDiscount = COUPONS[code];
+        showCouponMsg(`Applied ${code} — ${Math.round(currentDiscount*100)}% off`);
+      } else {
+        currentDiscount = 0;
+        showCouponMsg("Invalid coupon", true);
+      }
+      updateGrandTotal();
+    }
+    function showCouponMsg(msg, isError){
+      const el = document.getElementById("couponResult");
+      el.textContent = msg;
+      el.style.color = isError ? "#e11d48" : "var(--muted)";
+    }
+
+    // Download CSV
+    function downloadCSV(){
+      const rowsCSV = [["No","Item","Price","Qty","Total"]];
+      rows.forEach((r,i) => {
+        const idx = i+1;
+        const name = ITEMS[i][0].split('/')[0];
+        const price = ITEMS[i][1];
+        const qty = r.querySelector("input.qty").value || 0;
+        const total = (qty*price).toFixed(2);
+        rowsCSV.push([idx, name, price, qty, total]);
+      });
+      const csv = rowsCSV.map(r=> r.map(c => `"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n");
+      const blob = new Blob([csv], {type: 'text/csv;charset=utf-8;'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Tamil_Crackers_PriceList.csv';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+    // Download PDF (simple table)
+    async function downloadPDF(){
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({unit:'pt',format:'a4'});
+      doc.setFontSize(14);
+      doc.setTextColor(20);
+      doc.text("Tamil Crackers — Price List", 40, 40);
+      // build rows for autoTable
+      const body = [];
+      rows.forEach((r,i) => {
+        const name = ITEMS[i][0].split('/')[0];
+        const price = ITEMS[i][1];
+        const qty = r.querySelector("input.qty").value || 0;
+        const total = (qty*price).toFixed(2);
+        body.push([i+1, name, `₹${price}`, qty, `₹${total}`]);
+      });
+      doc.autoTable({
+        startY: 60,
+        head: [['#','Item','Price','Qty','Total']],
+        body,
+        styles: { fontSize: 10, cellPadding: 6 },
+        headStyles: { fillColor: [245,245,245], textColor: 40, fontStyle: 'bold' },
+        theme: 'grid',
+        margin: { left: 40, right: 40 }
+      });
+      // footer total
+      const finalY = doc.lastAutoTable.finalY + 18;
+      doc.setFontSize(11);
+      doc.text(`Grand Total: ${document.getElementById("grandTotal").textContent}`, 40, finalY);
+      doc.save("Tamil_Crackers_PriceList.pdf");
+    }
+
+    // Print only with qty
+    function printOnlyWithQty(){
+      // hide rows with qty 0
+      const hidden = [];
+      rows.forEach(r => {
+        const qty = parseInt(r.querySelector("input.qty").value || 0, 10);
+        if(qty === 0){ hidden.push(r); r.style.display = "none"; }
+      });
+      window.print();
+      hidden.forEach(r => { r.style.display = ""; });
+    }
+
+    // Order modal
+    function openOrderModal(){
+      document.getElementById("orderModal").style.display = "flex";
+      document.getElementById("custName").focus();
+    }
+    function closeOrderModal(){
+      document.getElementById("orderModal").style.display = "none";
+    }
+
+    function buildOrderMessage(name, address){
+      const picked = [];
+      rows.forEach((r,i) => {
+        const qty = parseInt(r.querySelector("input.qty").value || 0, 10);
+        if(qty > 0){
+          const itemName = ITEMS[i][0].split('/')[0];
+          const price = ITEMS[i][1];
+          const total = qty * price;
+          picked.push({itemName, price, qty, total});
+        }
+      });
+      const lines = [];
+      lines.push("Tamil Crackers — Order");
+      lines.push("-------------------------");
+      lines.push(`Name: ${name || '-'}`);
+      lines.push(`Address: ${address || '-'}`);
+      lines.push("");
+      if(picked.length){
+        lines.push("Items:");
+        picked.forEach(p => lines.push(`- ${p.itemName} • ₹${p.price} x ${p.qty} = ₹${p.total}`));
+      } else {
+        lines.push("- (No items selected)");
+      }
+      lines.push("");
+      lines.push(`Grand Total: ${document.getElementById("grandTotal").textContent}`);
+      lines.push("");
+      lines.push("Thanks! Tamil Crackers");
+      return lines.join("\n");
+    }
+
+    function saveAndSend(){
+      const name = document.getElementById("custName").value.trim();
+      const address = document.getElementById("custAddress").value.trim();
+      const mobile = document.getElementById("custMobile").value.trim() || "7502921335";
+      const msg = buildOrderMessage(name, address);
+      const encoded = encodeURIComponent(msg);
+      // open WhatsApp and mailto (both)
+      const wa = `https://wa.me/${mobile.replace(/[^0-9]/g,'') || '7502921335'}?text=${encoded}`;
+      window.open(wa, "_blank");
+      const mailto = `mailto:vidhyasagarg2001@gmail.com?subject=${encodeURIComponent("Tamil Crackers Order")}&body=${encoded}`;
+      window.location.href = mailto;
+      closeOrderModal();
+    }
+
+    // utils
+    function numberFormat(n){ return (Math.round(n*100)/100).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
+
+    // init: attach listeners to qty inputs
+    document.querySelectorAll("input.qty").forEach(inp => {
+      inp.addEventListener("input", () => updateRow(inp));
+      inp.addEventListener("change", () => updateRow(inp));
+    });
+
+    // keyboard: Enter in coupon applies
+    document.getElementById("couponCode").addEventListener("keydown", e => {
+      if(e.key === "Enter") applyCoupon();
+    });
+
+    // accessibility: close modal on Escape
+    window.addEventListener("keydown", e => {
+      if(e.key === "Escape") closeOrderModal();
+    });
+
+    // expose some functions for buttons
+    window.applyCoupon = applyCoupon;
+    window.downloadCSV = downloadCSV;
+    window.downloadPDF = downloadPDF;
+    window.printOnlyWithQty = printOnlyWithQty;
+    window.openOrderModal = openOrderModal;
+    window.closeOrderModal = closeOrderModal;
+    window.saveAndSend = saveAndSend;
+
+    // compute initial totals (all zero)
     updateGrandTotal();
-  }
 
-  function updateGrandTotal(){
-  let total = 0;
-  document.querySelectorAll(".finalPrice").forEach(td => { total += parseFloat(td.textContent) || 0; });
-
-  let discountAmount = total * currentDiscount;
-  let discountedTotal = total - discountAmount;
-
-  document.getElementById("grandTotal").textContent = discountedTotal.toFixed(2);
-
-  const discountDisplay = document.getElementById("discountDisplay");
-  if(currentDiscount > 0){
-    discountDisplay.textContent = `Discount: ₹${discountAmount.toFixed(2)} (${currentDiscount*100}%)`;
-  } else {
-    discountDisplay.textContent = "";
-  }
-}
-
-function downloadTable() {
-  let table = document.getElementById("priceTable");
-  let rows = table.querySelectorAll("tr");
-  let csv = [];
-
-  rows.forEach(row => {
-    let cols = row.querySelectorAll("th, td");
-    let rowData = [];
-    cols.forEach(col => {
-      let text = col.innerText.replace(/\n/g, " ").trim();
-      rowData.push('"' + text.replace(/"/g, '""') + '"');
-    });
-    csv.push(rowData.join(","));
-  });
-
-  let csvString = csv.join("\n");
-  let blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
-  let link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "_Crackers_Price_List.csv";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
-
-  // Save modal
-  function openSave(){ document.getElementById("saveModal").style.display = "flex"; document.getElementById("custName").focus();}
-  function closeSave(){ document.getElementById("saveModal").style.display = "none"; }
-
-  function printOnlyWithQty(){
-    const rows = document.querySelectorAll("#priceTable tbody tr");
-    const hiddenRows = [];
-    rows.forEach(r => {
-      const qty = parseInt(r.querySelector("input").value || "0", 10);
-      if(qty === 0){ r.style.display = "none"; hiddenRows.push(r); }
-    });
-    window.print();
-    hiddenRows.forEach(r => r.style.display = "");
-  }
-
-  function buildOrderMessage(name, address){
-    const rows = [...document.querySelectorAll("#priceTable tbody tr")];
-    const picked = rows.map(r => {
-      const name = r.querySelector(".item-name").textContent.trim();
-      const price = r.querySelector(".price b").textContent.trim();
-      const qty = r.querySelector("input").value.trim();
-      const final = r.querySelector(".finalPrice").textContent.trim();
-      return {name, price, qty, final};
-    }).filter(x => parseInt(x.qty||"0",10) > 0);
-
-    const grand = document.getElementById("grandTotal").textContent.trim();
-    let lines = [];
-    lines.push("Tamil Crackers Shop - Order");
-    lines.push("----------------------------");
-    lines.push(`Name: ${name || "-"}`);
-    lines.push(`Address: ${address || "-"}`);
-    lines.push("");
-    lines.push("Items:");
-    picked.forEach(p => lines.push(`- ${p.name} | ${p.price} x ${p.qty} = ₹${p.final}`));
-    if(picked.length === 0) lines.push("- (No quantities entered)");
-    lines.push("");
-    lines.push(`Grand Total: ₹${grand}`);
-    lines.push("");
-    lines.push("Thank you!");
-    return lines.join("\n");
-  }
-
-  function saveAndSend(){
-    const name = document.getElementById("custName").value.trim();
-    const address = document.getElementById("custAddress").value.trim();
-    const msg = buildOrderMessage(name, address);
-    const encoded = encodeURIComponent(msg);
-    const mailto = `mailto:vidhyasagarg2001@gmail.com?subject=${encodeURIComponent("Tamil Crackers Order")}&body=${encoded}`;
-    const wa = `https://wa.me/7502921335?text=${encoded}`;
-    window.open(wa, "_blank");
-    window.location.href = mailto;
-    closeSave();
-  }
-
-  // Happy Diwali popup
-  function closeDiwaliPopup() {
-    document.getElementById('diwaliPopup').style.display = 'none';
-  }
-  window.addEventListener('load', () => {
-    setTimeout(closeDiwaliPopup, 5000);
-  });
-</script>
+  </script>
 </body>
 </html>
-
