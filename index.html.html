@@ -248,7 +248,9 @@
 
     <div class="actions">
 	<div class="coupon-container">
- 
+  <label for="couponCode">Coupon Code:</label>
+  <input type="text" id="couponCode" placeholder="Enter coupon code" oninput="applyCoupon()" />
+  <span id="discountDisplay"></span>
 </div>
 
 
@@ -292,18 +294,20 @@ const ITEMS = [
   ["7cm Sparklers/கம்பி மத்தாப்பு",15],
   ["10cm Sparklers/கம்பி மத்தாப்பு",22],
   ["15cm Sparklers/கம்பி மத்தாப்பு",45],
+  ["30cm Sparklers/கம்பி மத்தாப்பு",60]
   ["FP big/பெரிய புஷ்வானம்",90],
   ["FB special/சிறப்பு புஷ்வானம்",100],
-  ["FP Small/சிறிய புஷ்வானம்",80],
-  ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",65],
-  ["GC Ashoka/பெரிய சங்கு சக்கரம்",100],
-  ["one and half inch Twinklingg star/சிறிய சாட்டை",40],
+  ["Colour Koti/வண்ண கோட்டி",220],
+  ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",70],
+  ["GC Special(25pcs)/சிறிய சங்கு சக்கரம்",120]
+  ["GC Special/பெரிய சங்கு சக்கரம்",150],
+  ["one and half inch Twinklingg star/சிறிய சாட்டை",50],
   ["4' Twinkling star/பெரிய சாட்டை",90],
   ["Waterfall Pencil/நீர்வீழ்ச்சி பென்சில்",250],
-  ["Bigili/பிஜிலி",20],
+  ["Bigili(50pcs)/பிஜிலி",20],
   ["Kuruvi",10],
   ["Match Box/மேட்ச் பாக்ஸ்",20],
-  ["Snake Tab/பாம்பு மாத்திரை",40],
+  ["Snake Tab/பாம்பு மாத்திரை",50],
   ["4 Lakhmi/லட்சுமி வெடி",20],
   ["2 Sound/2 ஒலி வெடி",40],
   ["6' Laksh/லட்சுமி வெடி",55],
@@ -316,42 +320,36 @@ const ITEMS = [
   ["28 Giant/சரம்",20],
   ["100 Giant/சரம்",50],
   ["1k Wala/சரம்",250],
-  ["2k Wala/சரம்",400],
-  ["5k Wala/சரம்",1000],
+  ["2k Wala/சரம்",500],
+  ["5k Wala/சரம்",1250],
   ["10k Wala/சரம்",2000],
-  ["Star War/சரம்",150],
-  ["Colour Koti/வண்ண கோட்டி",220],
   ["Rocket bomb/ராக்கெட் குண்டு",100],
   ["Color rain/வண்ண மழை",150],
   ["Red and Green Shower/சிவப்பு மற்றும் பச்சை வண்ண மழை",150],
-  ["Electric stone/மின்சார கல்",20],
-  ["Kit kat/கிட் கேட்",40],
-  ["Jee boomba/ஜீ பூம்பா",20],
+  ["Electric stone/மின்சார கல்",30],
+  ["Jee boomba/ஜீ பூம்பா",30],
   ["Ccartoon/கார்ட்டூன்",25],
-  ["Peacock Feather",120],
+  ["Fire Feather",150],
   ["Mega Peacock/மெகா மயில்",200],
   ["Butterfly/பட்டாம்பூச்சி வெடி",150],
   ["Bambaram/பம்பரம்",150],
   ["Selfie Stick/செல்ஃபி ஸ்டிக்",120],
   ["Diswheel",100],
-  ["Fire feather/பயர் பெதர்",150],
   ["Tin/டின்",110],
-  ["7 shot/7 ஒலி வெடி",100],
+  ["Big Tin",150],
   ["Photo flash/போட்டோ ஃபிளாஷ்",60],
   ["Han out/ஹான் அவுட்",300],
   ["Smoke color/புகை நிறம்",150],
   ["Siren/சைரன்",240],
   ["Peacock red & green/மயில் சிவப்பு & பச்சை",200],
-  ["Peacock Silver/மயில் சில்வர்",200],
   ["Golden globe/கோல்டன் குளோப்",180],
   ["Helicopter/ஹெலிகாப்டர்",120],
   ["Bada Peacock/மெகா மயில்",400],
   ["Tri color",320],
-  ["Once More",300],
+  ["Once More/வானம்",300],
   ["Single shot/வானம்",100],
-  ["Big Tin",150],
   ["Ganga and Yamuna/கங்கை மற்றும் யமுனா",150],
-  ["Battery Rocket/பேட்டரி ராக்கெட்",500],
+  ["Battery Rocket 10pcs/பேட்டரி ராக்கெட்",100],
   ["21 Items giftbox/கிப்ட் பாக்ஸ்",500],
   ["31 Items giftbox/கிப்ட் பாக்ஸ்",650]
 ];
@@ -378,7 +376,7 @@ function applyCoupon(){
   const code = document.getElementById("couponCode").value.trim().toUpperCase();
   if(code === "SG2025"){
     currentDiscount = 0.20; // 20%
-  } else if(code === "UDAIYAR"){
+  } else if(code === "PLR2025"){
     currentDiscount = 0.10; // 10%
   } else if(code === "EGS2025"){
     currentDiscount = 0.20; // 20%
@@ -574,5 +572,3 @@ function downloadTable() {
 </script>
 </body>
 </html>
-
-
