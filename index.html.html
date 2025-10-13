@@ -108,21 +108,113 @@
   <div class="wrap" role="application" aria-label="Tamil Crackers Price List App">
     <!-- LEFT: Brand / Controls -->
     <aside class="panel" aria-labelledby="brandTitle">
-      <div class="brand" id="brandTitle">
-        <div class="logo">TC</div>
-        <div>
-          <h1>Tamil Crackers</h1>
-          <p class="small">Price List • Iyyanar Kovil Salai, Palaiyur</p>
-        </div>
-      </div>
+     <div class="brand-card" id="brandTitle">
+  <div class="brand-logo">TC</div>
+  <div class="brand-details">
+    <h1 class="brand-name">Tamil Crackers</h1>
+    <p class="brand-address">
+      45, Iyyanar Kovil to ECR Salai, Near TMC Plant, Palaiyur.<br>
+      <strong>Landmark:</strong> 100m from ECR Road, 400m from Amrita Vidyalaya School.
+    </p>
+    <a 
+      href="https://share.google/yA4UfkDTG0R8BSCjs" 
+      target="_blank" 
+      class="map-btn"
+    >
+      📍 View on Map
+    </a>
+  </div>
+</div>
 
-      <div class="contact">
-        <div><strong>Contact</strong></div>
-        <div class="meta small">
-          <div>📞 7502921335</div>
-          <div>📞 9095621569</div>
-        </div>
-      </div>
+<style>
+  .brand-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px 25px;
+    max-width: 550px;
+    margin: 20px auto;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .brand-logo {
+    background: linear-gradient(135deg, #1976d2, #64b5f6);
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(25,118,210,0.3);
+  }
+
+  .brand-details {
+    flex: 1;
+  }
+
+  .brand-name {
+    margin: 0;
+    font-size: 22px;
+    color: #222;
+  }
+
+  .brand-address {
+    margin: 8px 0 16px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .map-btn {
+    display: inline-block;
+    background: #1976d2;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+
+  .map-btn:hover {
+    background: #0d47a1;
+  }
+</style>
+
+
+    <div class="contact">
+  <div class="contact-title"><strong>Contact</strong></div>
+  <div class="meta small">
+    <a href="tel:7502921335" class="call-link">📞 7502921335</a>
+    <a href="tel:9095621569" class="call-link">📞 9095621569</a>
+  </div>
+</div>
+
+<style>
+.call-link {
+    text-decoration: none;
+    color: #222;
+    font-size: 15px;
+    font-weight: 500;
+    background: #f5f5f5;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .call-link:hover {
+    background: #1976d2;
+    color: #fff;
+    transform: scale(1.03);
+  }
+</style>
 
       <div>
         <div class="help">Search items</div>
@@ -161,7 +253,7 @@
             <div class="small muted">Price List</div>
             <div style="font-weight:700;font-size:18px">Items & Prices</div>
           </div>
-          <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2v20" stroke="#c7c9d9" stroke-width="1.5" stroke-linecap="round"/></svg> Flat / Modern</div>
+          <div class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden><path d="M12 2v20" stroke="#c7c9d9" stroke-width="1.5" stroke-linecap="round"/></svg></div>
         </div>
 
         <div class="table-wrap" id="tableWrap" role="region" aria-label="Price list table">
@@ -218,7 +310,7 @@
       </div>
       <div class="field">
         <label for="custMobile">Mobile number</label>
-        <input id="custMobile" type="text" placeholder="7502921335" />
+        <input id="custMobile" type="text"/>
       </div>
 
       <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
@@ -470,49 +562,48 @@
       document.getElementById("orderModal").style.display = "none";
     }
 
-    function buildOrderMessage(name, address){
-      const picked = [];
-      rows.forEach((r,i) => {
-        const qty = parseInt(r.querySelector("input.qty").value || 0, 10);
-        if(qty > 0){
-          const itemName = ITEMS[i][0].split('/')[0];
-          const price = ITEMS[i][1];
-          const total = qty * price;
-          picked.push({itemName, price, qty, total});
-        }
-      });
-      const lines = [];
-      lines.push("Tamil Crackers — Order");
-      lines.push("-------------------------");
-      lines.push(`Name: ${name || '-'}`);
-      lines.push(`Address: ${address || '-'}`);
-      lines.push("");
-      if(picked.length){
-        lines.push("Items:");
-        picked.forEach(p => lines.push(`- ${p.itemName} • ₹${p.price} x ${p.qty} = ₹${p.total}`));
-      } else {
-        lines.push("- (No items selected)");
-      }
-      lines.push("");
-      lines.push(`Grand Total: ${document.getElementById("grandTotal").textContent}`);
-      lines.push("");
-      lines.push("Thanks! Tamil Crackers");
-      return lines.join("\n");
+   function buildOrderMessage(name, address, mobile){
+  const picked = [];
+  rows.forEach((r,i) => {
+    const qty = parseInt(r.querySelector("input.qty").value || 0, 10);
+    if(qty > 0){
+      const itemName = ITEMS[i][0].split('/')[0];
+      const price = ITEMS[i][1];
+      const total = qty * price;
+      picked.push({itemName, price, qty, total});
     }
+  });
+  const lines = [];
+  lines.push("Tamil Crackers — Order");
+  lines.push("-------------------------");
+  lines.push(`Name: ${name || '-'}`);
+  lines.push(`Mobile: ${mobile || '-'}`);     // ✅ Added this line
+  lines.push(`Address: ${address || '-'}`);
+  lines.push("");
+  if(picked.length){
+    lines.push("Items:");
+    picked.forEach(p => lines.push(`- ${p.itemName} • ₹${p.price} x ${p.qty} = ₹${p.total}`));
+  } else {
+    lines.push("- (No items selected)");
+  }
+  lines.push("");
+  lines.push(`Grand Total: ${document.getElementById("grandTotal").textContent}`);
+  lines.push("");
+  lines.push("Thanks! Tamil Crackers");
+  return lines.join("\n");
+}
 
-    function saveAndSend(){
-      const name = document.getElementById("custName").value.trim();
-      const address = document.getElementById("custAddress").value.trim();
-      const mobile = document.getElementById("custMobile").value.trim() || "7502921335";
-      const msg = buildOrderMessage(name, address);
-      const encoded = encodeURIComponent(msg);
-      // open WhatsApp and mailto (both)
-      const wa = `https://wa.me/${mobile.replace(/[^0-9]/g,'') || '7502921335'}?text=${encoded}`;
-      window.open(wa, "_blank");
-      const mailto = `mailto:vidhyasagarg2001@gmail.com?subject=${encodeURIComponent("Tamil Crackers Order")}&body=${encoded}`;
-      window.location.href = mailto;
-      closeOrderModal();
-    }
+
+ function saveAndSend(){
+  const name = document.getElementById("custName").value.trim();
+  const address = document.getElementById("custAddress").value.trim();
+  const mobile = document.getElementById("custMobile").value.trim() || "7502921335";
+  const msg = buildOrderMessage(name, address, mobile); // ✅ pass mobile here
+  const encoded = encodeURIComponent(msg);
+  const wa = `https://wa.me/${mobile.replace(/[^0-9]/g,'') || 'NA'}?text=${encoded}`;
+  window.open(wa, "_blank");
+}
+
 
     // utils
     function numberFormat(n){ return (Math.round(n*100)/100).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}); }
