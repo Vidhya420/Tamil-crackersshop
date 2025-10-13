@@ -248,7 +248,9 @@
 
     <div class="actions">
 	<div class="coupon-container">
-
+  <label for="couponCode">Coupon Code:</label>
+  <input type="text" id="couponCode" placeholder="Enter coupon code" oninput="applyCoupon()" />
+  <span id="discountDisplay"></span>
 </div>
 
 
@@ -297,7 +299,7 @@ const ITEMS = [
   ["FB special/சிறப்பு புஷ்வானம்",100],
   ["Colour Koti/வண்ண கோட்டி",220],
   ["GC Big(10pcs)/சிறிய சங்கு சக்கரம்",70],
-  ["GC Special(25pcs)/சிறிய சங்கு சக்கரம்",120]
+  ["GC Special(25pcs)/சிறிய சங்கு சக்கரம்",120],
   ["GC Special/பெரிய சங்கு சக்கரம்",150],
   ["one and half inch Twinklingg star/சிறிய சாட்டை",50],
   ["4' Twinkling star/பெரிய சாட்டை",90],
@@ -570,5 +572,3 @@ function downloadTable() {
 </script>
 </body>
 </html>
-
-
