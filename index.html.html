@@ -594,15 +594,28 @@
 }
 
 
- function saveAndSend(){
+function saveAndSend() {
   const name = document.getElementById("custName").value.trim();
   const address = document.getElementById("custAddress").value.trim();
-  const mobile = document.getElementById("custMobile").value.trim() || "7502921335";
-  const msg = buildOrderMessage(name, address, mobile); // ✅ pass mobile here
+  const mobile = document.getElementById("custMobile").value.trim();
+  
+  // Always send to your WhatsApp number (store owner's number)
+  const shopNumber = "7502921335"; 
+  
+  // Build order message
+  const msg = buildOrderMessage(name, address, mobile || shopNumber);
   const encoded = encodeURIComponent(msg);
-  const wa = `https://wa.me/${mobile.replace(/[^0-9]/g,'') || 'NA'}?text=${encoded}`;
+  
+  // WhatsApp link always goes to your number
+  const wa = `https://wa.me/${shopNumber}?text=${encoded}`;
+  
+  // Open WhatsApp
   window.open(wa, "_blank");
+  
+  // Close modal
+  closeOrderModal();
 }
+
 
 
     // utils
